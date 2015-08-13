@@ -65,7 +65,7 @@ print(sprintf("Median of total number of steps per day:%d", median(dfSum$dailySt
 dfDaily <- ddply(df1, c("interval"), summarise, 
                  intervalMeanSteps = mean(steps, na.rm=TRUE))
 m <- ggplot(dfDaily, aes(x=interval, y=intervalMeanSteps)) +  geom_line(stat="identity") 
-m <- m +  ggtitle("Average Daily Activity Pattern") + xlab("Interval(min)")+ ylab("Steps") 
+m <- m +  ggtitle("Average Daily Activity Pattern") + xlab("Interval")+ ylab("Steps") 
 plot(m)
 ```
 
@@ -155,7 +155,6 @@ print(sprintf("Median of total number of steps per day:%d", median(dfSum$dailySt
 ```
 ## [1] "Median of total number of steps per day:10395"
 ```
-
 These values above differ from the estimates from the first part of the assignment. This is
 because of imputing missing data on the estimates of the total daily number of steps.
 Both the mean and median have decreased because previously data that was ignored because
